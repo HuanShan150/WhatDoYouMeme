@@ -16,32 +16,39 @@ class Main():
         self.whiteCard4 = PhotoImage(file = "imagens/white-card.gif", height=270, width=200)
         self.whiteCard5 = PhotoImage(file = "imagens/white-card.gif", height=270, width=200)
 
-        self.limg = Label(self.mainWindow, i=self.backGround)
+        menuFrame = Frame( self.mainWindow, bg="gray", width= 10, height=30)
+        menuFrame.pack(fill="both",ipady=3, ipadx=10)
+        self.buttonStart = Button(menuFrame, text="Iniciar Jogo", width=10)
+        self.buttonStart.grid(row=0, column=0, pady=2)
+        self.buttonConnect = Button(menuFrame, text="Conectar", width=10)
+        self.buttonConnect.grid(row=1, column=0, pady=2)
+        self.buttonDisconect = Button(menuFrame, text="Desconectar", width=10)
+        self.buttonDisconect.grid(row=2, column=0, pady=2)
 
-        menuFrame = Frame(self.mainWindow)
-        menuFrame.pack(pady=5 ,padx=10)
-
-
-        self.button = Button(menuFrame, text="Confirmar")
-        self.button.grid(row=0, column=0)
-
-        meme = Label(self.mainWindow, i=self.meme)
-        meme.pack(pady=5 ,side= TOP)
-
-
-
-        card1 = Label(self.mainWindow, i=self.whiteCard1)
-        card2 = Label(self.mainWindow, i=self.whiteCard2)
-        card3 = Label(self.mainWindow, i=self.whiteCard3)
-        card4 = Label(self.mainWindow, i=self.whiteCard4)
-        card5 = Label(self.mainWindow, i=self.whiteCard5)
-        card1.pack(padx=5, pady=15,side=LEFT)
-        card2.pack(padx=5, pady=15,side=LEFT)
-        card3.pack(padx=5, pady=15,side=LEFT)
-        card4.pack(padx=5, pady=15,side=LEFT)
-        card5.pack(padx=5, pady=15,side=LEFT)
+        memeFrame = Frame(self.mainWindow, bg="gray", width= 10, height=30)
+        memeFrame.pack(fill="x", ipady= 180)
+        meme = Label(memeFrame, i=self.meme)
+        meme.place(relx=0.5, rely=0.5, anchor=CENTER)
 
         
+        cardsFrame = Frame(self.mainWindow, bg="gray", width= 10, height=30)
+        cardsFrame.pack(fill="x", ipady= 5, side= BOTTOM)
+
+        card1 = Label(cardsFrame, i=self.whiteCard1)
+        card2 = Label(cardsFrame, i=self.whiteCard2)
+        card3 = Label(cardsFrame, i=self.whiteCard3)
+        card4 = Label(cardsFrame, i=self.whiteCard4)
+        card5 = Label(cardsFrame, i=self.whiteCard5)
+        card1.grid(row=0, column=0, padx=5, pady=3)
+        card2.grid(row=0, column=1, padx=5, pady=3)
+        card3.grid(row=0, column=2, padx=5, pady=3)
+        card4.grid(row=0, column=3, padx=5, pady=3)
+        card5.grid(row=0, column=4, padx=5, pady=3)
+
+        self.buttonConfirm = Button(cardsFrame, text="Confirmar", width=10)
+        self.buttonConfirm.grid(row=1, column=2, pady=2)
+
+
         self.mainWindow.mainloop();
 
     def ooutro(self):
