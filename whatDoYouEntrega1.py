@@ -30,7 +30,6 @@ class Main():
         meme = Label(memeFrame, i=self.meme)
         meme.place(relx=0.5, rely=0.5, anchor=CENTER)
 
-        
         cardsFrame = Frame(self.mainWindow, bg="gray", width= 10, height=30)
         cardsFrame.pack(fill="x", ipady= 5, side= BOTTOM)
 
@@ -48,6 +47,17 @@ class Main():
         self.buttonConfirm = Button(cardsFrame, text="Confirmar", width=10)
         self.buttonConfirm.grid(row=1, column=2, pady=2)
 
+        #Jogadores e suas pontuacoes na tela
+        jogador1 = Label(self.mainWindow, text = "Jogador 1\nCartas ganhadoras: ", background="#ff0")
+        jogador1.place(relx=0.85, rely=0.2, width=150, height=40) 
+        jogador2 = Label(self.mainWindow, text="Jogador 2\nCartas ganhadoras: ", background="#ff0")
+        jogador2.place(relx=0.85, rely=0.3, width=150, height=40)
+        jogador3 = Label(self.mainWindow, text="Jogador 3\nCartas ganhadoras: ", background="#ff0")
+        jogador3.place(relx=0.85, rely=0.4, width=150, height=40)
+
+        #Indicador de quem é o juiz da rodada (o relx e rely vao mudar de acordo com quem for o juiz da rodada)
+        juiz = Label(self.mainWindow, text="Juiz da rodada", background="#fff")
+        juiz.place(relx=0.85, rely=0.18, width=150, height=20)
 
         self.mainWindow.mainloop();
 
